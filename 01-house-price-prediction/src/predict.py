@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 
 # Load trained model
-with open('../models/house_price_model.pkl', 'rb') as f:
+with open('Machine-Learning-Project\\01-house-price-prediction\\models\\house_price_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Example house features: bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view, condition, sqft_above, sqft_basement, yr_built, yr_renovated

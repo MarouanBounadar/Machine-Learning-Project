@@ -9,7 +9,7 @@ model = LinearRegression()
 model.fit(X, y)
 
 # Save the model
-with open('../models/house_price_model.pkl', 'wb') as f:
+with open('Machine-Learning-Project\\01-house-price-prediction\\models\\house_price_model.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 print("Model trained and saved successfully!")
