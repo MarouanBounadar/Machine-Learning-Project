@@ -1,31 +1,27 @@
 # House Price Prediction
 
 ## Overview
-
-This project predicts house prices using machine learning.
+Predict house prices based on property features like bedrooms, bathrooms, sqft, and more.
 
 ## Dataset
-
-Housing dataset containing features like:
-
-* area
-* bedrooms
-* bathrooms
-* floors
-
-## Technologies
-
-Python, Pandas, Scikit-learn
+Columns include:
+- date, price, bedrooms, bathrooms, sqft_living, sqft_lot
+- floors, waterfront, view, condition
+- sqft_above, sqft_basement, yr_built, yr_renovated
+- street, city, statezip, country
 
 ## Model
+Linear Regression (can upgrade to Random Forest / XGBoost)
 
-Linear Regression
+## Folder Structure
+- `data/` → dataset
+- `notebooks/` → EDA and experiments
+- `src/` → preprocessing, training, prediction scripts
+- `models/` → saved model
+- `images/` → visualizations
 
-## Results
-
-The model predicts house prices based on property features.
-
-## Run the Project
-
+## How to Run
+```bash
 pip install -r requirements.txt
 python src/train.py
+python src/predict.py
