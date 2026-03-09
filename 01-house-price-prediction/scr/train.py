@@ -1,16 +1,15 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 import pickle
+from sklearn.linear_model import LinearRegression
+from preprocessing import load_data, preprocess_features
 
-data = pd.read_csv("data/housing.csv")
-
-X = data.drop("price", axis=1)
-y = data["price"]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+data = load_data()
+X, y = preprocess_features(data)
 
 model = LinearRegression()
-model.fit(X_train, y_train)
+model.fit(X, y)
 
-pickle.dump(model, open("models/house_price_model.pkl", "wb"))
+# Save the model
+with open('../models/house_price_model.pkl', 'wb') as f:
+    pickle.dump(model, f)
+
+print("Model trained and saved successfully!")
